@@ -1,4 +1,4 @@
-name: ESlint Test
+name: Jest Tests
 on:
   pull_request:
     branches:
@@ -17,4 +17,4 @@ jobs:
         with:
           node-version: 16.x
       - run: npm install
-      - run: npm run lint
+      - run: npm run test
