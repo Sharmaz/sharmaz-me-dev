@@ -7,9 +7,6 @@ module.exports = {
         background: '#07071C',
       },
     },
-    screens: {
-      xs: '320px',
-    },
   },
   plugins: [],
 };
