@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import './layout.css';
 
 const Layout = ({ children }) => (
-  <div className="content">
+  <div className="bg-background">
     <Header />
     {children}
     <Footer />

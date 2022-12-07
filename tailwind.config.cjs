@@ -4,7 +4,11 @@ module.exports = {
     extend: {
       colors: {
         primary: '#282C34',
+        background: '#07071C',
       },
+    },
+    screens: {
+      xs: '320px',
     },
   },
   plugins: [],
