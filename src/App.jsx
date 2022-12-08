@@ -3,14 +3,18 @@ import Hero from './components/Hero';
 import About from './components/About';
 
 import './app.css';
+import Experience from './components/Experience';
 
 const App = () => (
   <Layout>
-    <Hero />
-    <About />
-    <h1 className="font-bold">
-      Welcome to Sharmaz Portfolio/Resume
-    </h1>
+    <>
+      <Hero />
+      <About />
+      <Experience />
+      <h1 className="font-bold">
+        Welcome to Sharmaz Portfolio/Resume
+      </h1>
+    </>
   </Layout>
 );
 
