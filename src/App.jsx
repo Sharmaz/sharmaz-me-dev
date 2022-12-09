@@ -1,9 +1,10 @@
 import Layout from './layout/Layout';
 import Hero from './components/Hero';
 import About from './components/About';
+import Experience from './components/Experience';
+import Work from './components/Work';
 
 import './app.css';
-import Experience from './components/Experience';
 
 const App = () => (
   <Layout>
@@ -11,6 +12,7 @@ const App = () => (
       <Hero />
       <About />
       <Experience />
+      <Work />
       <h1 className="font-bold">
         Welcome to Sharmaz Portfolio/Resume
       </h1>
