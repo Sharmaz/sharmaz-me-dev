@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="40px" viewBox="0 0 48 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>9026645_folder_thin_icon</title>
+    <defs>
+        <filter id="filter-1">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.847000 0 0 0 0 0.847000 0 0 0 0 0.847000 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Desktop" transform="translate(-114.000000, -1432.000000)">
+            <g id="Work" transform="translate(88.000000, 1343.000000)">
+                <g id="9026645_folder_thin_icon" transform="translate(0.000000, 56.000000)" filter="url(#filter-1)">
+                    <g transform="translate(27.000000, 34.000000)">
+                        <path d="M44.2989583,38 L1.77291667,38 C1.30270993,38 0.85176164,37.8148354 0.519275269,37.4852402 C0.186788898,37.155645 0,36.708618 0,36.2425 L0,7.6 L44.0833333,7.6 C45.1418791,7.6 46,8.45065898 46,9.5 L46,36.31375 C46,37.2450402 45.2384177,38 44.2989583,38 L44.2989583,38 Z" id="Path" stroke="#000000"></path>
+                        <path d="M0,7.6 L0,1.90000866 C0,0.850669231 0.858120896,0 1.91666667,0 L14.5427083,0 C15.0453591,-0.00173549895 15.5280665,0.194795059 15.884375,0.546260719 L23,7.6" id="Path" stroke="#000000"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
