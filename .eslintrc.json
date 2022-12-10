@@ -25,6 +25,12 @@
       "namedComponents": "arrow-function",
       "unnamedComponents": "arrow-function"
     }],
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "import/no-unresolved": [
+      2,
+      {
+        "ignore": [ "\\.svg" ]
+      }
+    ]
   }
 }

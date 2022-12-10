@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import logo from '../assets/images/logo.png';
-import menuIcon from '../assets/images/menu_icon.svg';
-import closeMenuIcon from '../assets/images/menu_close_icon.svg';
+import MenuIcon from '../assets/images/menu_icon.svg?url';
+import CloseMenuIcon from '../assets/images/menu_close_icon.svg?url';
 
 const Header = () => {
   const [show, setShow] = useState(false);
@@ -20,7 +20,7 @@ const Header = () => {
           className="menu-icon w-10 h-10 md:hidden"
           onClick={showMenu}
         >
-          <img src={show ? closeMenuIcon : menuIcon} alt="menu icon" />
+          <img src={show ? CloseMenuIcon : MenuIcon} alt="menu icon" />
         </div>
         <ul className="hidden md:flex text-xl">
           <li className="mx-2">

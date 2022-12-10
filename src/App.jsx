@@ -15,9 +15,6 @@ const App = () => (
       <Experience />
       <Work />
       <Contact />
-      <h1 className="font-bold">
-        Welcome to Sharmaz Portfolio/Resume
-      </h1>
     </>
   </Layout>
 );
