@@ -18,4 +18,10 @@
   a {
     @apply text-blue-600 underline;
   }
+
+  .button-purple {
+    @apply bg-[length:250px_400px]
+    bg-gradient-to-tl from-heliotrope via-dark-orchid to-metallic-blue
+    rounded-full hover:animate-purple-animation;
+  }
 }

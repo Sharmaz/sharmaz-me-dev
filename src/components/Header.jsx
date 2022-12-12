@@ -10,7 +10,7 @@ const Header = () => {
   }
 
   return (
-    <header className="border-b-2 border-b-gray-400">
+    <header className="relative">
       <nav className="flex items-center justify-evenly  py-2 relative max-w-screen-lg mx-auto">
         <img src={logo} alt="Ivan Robles" width={48} />
         <h3 className="text-4xl md:text-2xl">Ivan Robles</h3>
@@ -36,7 +36,10 @@ const Header = () => {
             <a href="#contact" className="no-underline text-slate-400">Contact</a>
           </li>
         </ul>
-        <button type="button" className="hidden md:block w-32 bg-transparent border-2 border-slate-500 p-1 text-xl rounded-full ml-2">Resume</button>
+        <div className="button-purple hidden md:block  h-10 w-[132px]">
+          <button type="button" className="hidden bg-background md:block w-32  p-1 text-xl rounded-full m-0.5">Resume</button>
+        </div>
+        <div className="bg-gradient-to-tl from-heliotrope via-dark-orchid to-metallic-blue w-full h-0.5 absolute bottom-0 left-0" />
         {
           show ? (
             <nav className="absolute w-full h-screen bg-background top-16">
@@ -54,7 +57,9 @@ const Header = () => {
                   <a href="#contact" className="no-underline text-slate-400 my-8">Contact me</a>
                 </li>
               </ul>
-              <button type="button" className="w-48 bg-transparent border-2 border-slate-500 p-2 text-2xl rounded-full ml-4 mt-8">Resume</button>
+              <div className="button-purple ml-4 mt-4 w-[248px]">
+                <button type="button" className="bg-background p-2 text-2xl rounded-full ml-1 my-1 w-60">Resume</button>
+              </div>
             </nav>
           )
             : null
