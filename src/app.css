@@ -24,4 +24,9 @@
     bg-gradient-to-tl from-heliotrope via-dark-orchid to-metallic-blue
     rounded-full hover:animate-purple-animation;
   }
+  .work-card {
+    @apply bg-[length:400px_400px]
+    bg-gradient-to-tl from-heliotrope via-dark-orchid to-metallic-blue
+    rounded-2xl hover:animate-purple-animation;
+  }
 }
