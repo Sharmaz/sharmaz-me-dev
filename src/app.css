@@ -21,12 +21,15 @@
 
   .button-purple {
     @apply bg-[length:250px_400px]
-    bg-gradient-to-tl from-heliotrope via-dark-orchid to-metallic-blue
+    purple-gradient
     rounded-full hover:animate-purple-animation;
   }
   .work-card {
     @apply bg-[length:400px_400px]
-    bg-gradient-to-tl from-heliotrope via-dark-orchid to-metallic-blue
+    purple-gradient
     rounded-2xl hover:animate-purple-animation;
+  }
+  .purple-gradient {
+    @apply bg-gradient-to-tl from-heliotrope via-dark-orchid to-metallic-blue;
   }
 }
