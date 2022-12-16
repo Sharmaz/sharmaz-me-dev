@@ -19,17 +19,41 @@
     @apply text-blue-600 underline;
   }
 
+  .purple-gradient {
+    @apply bg-gradient-to-tl from-heliotrope via-dark-orchid to-metallic-blue;
+  }
+
+  .orange-gradient {
+    @apply bg-gradient-to-tl from-orange-peel via-vivid-cerise to-light-cobalt;
+  }
+
   .button-purple {
-    @apply bg-[length:250px_400px]
+    @apply bg-[length:200%_200%]
     purple-gradient
     rounded-full hover:animate-purple-animation;
   }
+
+  .button-orange {
+    @apply bg-[length:200%_200%]
+    orange-gradient
+    rounded-full hover:animate-purple-animation;
+  }
+
   .work-card {
     @apply bg-[length:400px_400px]
     purple-gradient
     rounded-2xl hover:animate-purple-animation;
   }
-  .purple-gradient {
-    @apply bg-gradient-to-tl from-heliotrope via-dark-orchid to-metallic-blue;
+
+  .form-container {
+    @apply bg-[length:100%_100%]
+    purple-gradient
+    rounded-2xl
+  }
+
+  .form-field {
+    @apply bg-[length:120%_120%]
+    orange-gradient
+    rounded-2xl
   }
 }

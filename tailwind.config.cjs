@@ -8,6 +8,9 @@ module.exports = {
         heliotrope: '#E963FD',
         'dark-orchid': '#8233C5',
         'metallic-blue': '#274B74',
+        'orange-peel': '#FDA000',
+        'vivid-cerise': '#D3208B',
+        'light-cobalt': '#879AF2',
       },
       animation: {
         'purple-animation': 'animationGradient 2s ease alternate infinite',
