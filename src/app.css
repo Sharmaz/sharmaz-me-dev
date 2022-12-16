@@ -16,7 +16,7 @@
     @apply text-lg;
   }
   a {
-    @apply text-blue-600 underline;
+    @apply no-underline text-slate-300;
   }
 
   .purple-gradient {
@@ -30,12 +30,14 @@
   .button-purple {
     @apply bg-[length:200%_200%]
     purple-gradient
+    text-slate-300
     rounded-full hover:animate-purple-animation;
   }
 
   .button-orange {
     @apply bg-[length:200%_200%]
     orange-gradient
+    text-slate-300
     rounded-full hover:animate-purple-animation;
   }
 

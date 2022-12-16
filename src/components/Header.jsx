@@ -10,12 +10,12 @@ const Header = () => {
   }
 
   return (
-    <header className="fixed w-full top-0 z-20">
+    <header className="fixed w-full top-0 z-20 backdrop-blur">
       <nav className="flex items-center justify-evenly  py-2 relative max-w-screen-lg mx-auto">
-        <a href="/" className="no-underline text-slate-400">
+        <a href="/">
           <div className="flex items-center">
             <img src={logo} alt="Ivan Robles" width={48} />
-            <h3 className="text-4xl md:text-2xl">Ivan Robles</h3>
+            <h3 className="text-4xl md:text-2xl ml-2">Ivan Robles</h3>
           </div>
         </a>
         <div
@@ -28,16 +28,16 @@ const Header = () => {
         </div>
         <ul className="hidden md:flex text-xl">
           <li className="mx-2">
-            <a href="#about" className="no-underline text-slate-400">About</a>
+            <a href="#about" className="hover:drop-shadow-3xl">About</a>
           </li>
           <li className="mx-2">
-            <a href="#experience" className="no-underline text-slate-400">Experience</a>
+            <a href="#experience" className="hover:drop-shadow-3xl">Experience</a>
           </li>
           <li className="mx-2">
-            <a href="#work" className="no-underline text-slate-400">Work</a>
+            <a href="#work" className="hover:drop-shadow-3xl">Work</a>
           </li>
           <li className="mx-2">
-            <a href="#contact" className="no-underline text-slate-400">Contact</a>
+            <a href="#contact" className="hover:drop-shadow-3xl">Contact</a>
           </li>
         </ul>
         <div className="button-purple hidden md:block  h-10 w-[132px]">
