@@ -56,4 +56,8 @@
     orange-gradient
     rounded-2xl
   }
+
+  .subtitle {
+    @apply text-2xl md:text-4xl pt-16 drop-shadow-3xl text-slate-300;
+  }
 }

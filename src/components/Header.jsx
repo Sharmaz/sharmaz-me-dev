@@ -10,7 +10,7 @@ const Header = () => {
   }
 
   return (
-    <header className="fixed w-full top-0">
+    <header className="fixed w-full top-0 z-20">
       <nav className="flex items-center justify-evenly  py-2 relative max-w-screen-lg mx-auto">
         <a href="/" className="no-underline text-slate-400">
           <div className="flex items-center">
