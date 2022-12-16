@@ -1,5 +1,5 @@
 const Hero = () => (
-  <section className="text-2xl mx-4 my-10 md:text-5xl max-w-screen-lg md:pl-8 md:mx-auto">
+  <section className="text-2xl mx-4 mb-10 mt-20 md:text-5xl max-w-screen-lg md:pl-8 md:mx-auto">
     <span className="block">Hi,</span>
     <span className="block">I’m Ivan Robles,</span>
     <span className="block">a Frontend Developer</span>

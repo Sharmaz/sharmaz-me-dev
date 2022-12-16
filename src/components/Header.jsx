@@ -10,10 +10,14 @@ const Header = () => {
   }
 
   return (
-    <header className="relative">
+    <header className="fixed w-full top-0">
       <nav className="flex items-center justify-evenly  py-2 relative max-w-screen-lg mx-auto">
-        <img src={logo} alt="Ivan Robles" width={48} />
-        <h3 className="text-4xl md:text-2xl">Ivan Robles</h3>
+        <a href="/" className="no-underline text-slate-400">
+          <div className="flex items-center">
+            <img src={logo} alt="Ivan Robles" width={48} />
+            <h3 className="text-4xl md:text-2xl">Ivan Robles</h3>
+          </div>
+        </a>
         <div
           role="button"
           aria-hidden="true"
@@ -27,10 +31,10 @@ const Header = () => {
             <a href="#about" className="no-underline text-slate-400">About</a>
           </li>
           <li className="mx-2">
-            <a href="#work" className="no-underline text-slate-400">Work</a>
+            <a href="#experience" className="no-underline text-slate-400">Experience</a>
           </li>
           <li className="mx-2">
-            <a href="#experience" className="no-underline text-slate-400">Experience</a>
+            <a href="#work" className="no-underline text-slate-400">Work</a>
           </li>
           <li className="mx-2">
             <a href="#contact" className="no-underline text-slate-400">Contact</a>

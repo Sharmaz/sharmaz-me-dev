@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply text-slate-400 bg-background;
+    @apply text-slate-400 bg-background scroll-smooth;
   }
   h1 {
     @apply text-2xl;

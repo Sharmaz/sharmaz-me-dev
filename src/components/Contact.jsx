@@ -1,5 +1,5 @@
 const Contact = () => (
-  <section className="mx-4 my-10  max-w-screen-lg md:pl-8 md:mx-auto">
+  <section className="mx-4 my-10  max-w-screen-lg md:pl-8 md:mx-auto" id="contact">
     <h2 className="text-2xl md:text-4xl">Contact me</h2>
     <div className="form-container p-0.5 w-full my-8 md:w-3/4">
       <form className="bg-background rounded-2xl p-4" action="https://formspree.io/f/irae45@gmail.com" method="post">
