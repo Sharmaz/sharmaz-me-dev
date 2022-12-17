@@ -59,6 +59,11 @@
     rounded-2xl
   }
 
+  .hamburger-element {
+    @apply purple-gradient absolute w-8 h-[3px]
+    transition-all ease-in-out delay-100
+  }
+
   .subtitle {
     @apply text-2xl md:text-4xl pt-16 drop-shadow-3xl text-slate-300;
   }

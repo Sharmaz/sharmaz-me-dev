@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import logo from '../assets/images/logo.png';
-import MenuIcon from '../assets/images/menu_icon.svg?url';
-import CloseMenuIcon from '../assets/images/menu_close_icon.svg?url';
 
 const Header = () => {
   const [show, setShow] = useState(false);
   function showMenu() {
     setShow(!show);
+    document.body.classList.toggle('overflow-hidden');
   }
 
   return (
@@ -21,10 +20,14 @@ const Header = () => {
         <div
           role="button"
           aria-hidden="true"
-          className="menu-icon w-10 h-10 md:hidden mr-4"
+          className="menu-icon h-8 w-8 md:hidden mr-4 relative"
           onClick={showMenu}
         >
-          <img src={show ? CloseMenuIcon : MenuIcon} alt="menu icon" />
+          <div className="hamburger-icon absolute h-8 w-8 left-0 top-4 flex flex-col items-center">
+            <div className={`hamburger-element ${!show ? '-translate-y-3' : 'rotate-[40deg]'}`} />
+            <div className={`hamburger-element ${!show ? '' : 'opacity-0'}`} />
+            <div className={`hamburger-element ${!show ? 'translate-y-3' : '-rotate-[40deg]'}`} />
+          </div>
         </div>
         <ul className="hidden md:flex text-xl">
           <li className="mx-2">
