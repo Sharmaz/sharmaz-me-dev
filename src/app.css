@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply text-slate-400 bg-background;
+    @apply text-slate-400 bg-background scroll-smooth;
   }
   h1 {
     @apply text-2xl;
@@ -16,7 +16,7 @@
     @apply text-lg;
   }
   a {
-    @apply text-blue-600 underline;
+    @apply no-underline text-slate-300;
   }
 
   .purple-gradient {
@@ -30,12 +30,14 @@
   .button-purple {
     @apply bg-[length:200%_200%]
     purple-gradient
+    text-slate-300
     rounded-full hover:animate-purple-animation;
   }
 
   .button-orange {
     @apply bg-[length:200%_200%]
     orange-gradient
+    text-slate-300
     rounded-full hover:animate-purple-animation;
   }
 
@@ -55,5 +57,14 @@
     @apply bg-[length:120%_120%]
     orange-gradient
     rounded-2xl
+  }
+
+  .hamburger-element {
+    @apply purple-gradient absolute w-8 h-[3px]
+    transition-all ease-in-out delay-100
+  }
+
+  .subtitle {
+    @apply text-2xl md:text-4xl pt-16 drop-shadow-3xl text-slate-300;
   }
 }

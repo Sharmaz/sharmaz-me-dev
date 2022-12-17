@@ -1,8 +1,8 @@
 import profilePic from '../assets/images/me.png';
 
 const About = () => (
-  <section className="mx-4 my-10  max-w-screen-lg md:pl-8 md:mx-auto">
-    <h2 className="text-2xl md:text-4xl">About me</h2>
+  <section className="mx-4 my-10  max-w-screen-lg md:pl-8 md:mx-auto" id="about">
+    <h2 className="subtitle">About me</h2>
     <div className="about-container flex flex-col md:flex-row justify-center items-center">
       <p className="text-xl my-4 md:w-1/2">
         Ivan Robles specializes in technologies related to React,

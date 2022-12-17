@@ -5,8 +5,8 @@ const Experience = () => {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="mx-4 my-10  max-w-screen-lg md:pl-8 md:mx-auto">
-      <h2 className="text-2xl md:text-4xl">Experience</h2>
+    <section className="mx-4 my-10  max-w-screen-lg md:pl-8 md:mx-auto" id="experience">
+      <h2 className="subtitle">Experience</h2>
       <div className="experience-container flex flex-col md:flex-row justify-center md:justify-start md:items-start items-center mt-4">
         <nav className="w-full md:w-1/3 border-b-2 border-b-gray-400 md:border-b-transparent md:border-l-2 md:border-l-gray-400 mt-4">
           <ul className="flex md:flex-col justify-between md:justify-start items-start text-lg">
