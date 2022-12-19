@@ -10,13 +10,13 @@ const Footer = () => (
     </span>
     <div className="flex">
       <a href="#github" className="mr-2">
-        <GithubIcon className="w-7 md:w-10 fill-gray-400" />
+        <GithubIcon className="w-7 md:w-10 fill-gray-400 hover:fill-slate-300" />
       </a>
       <a href="#github" className="mr-2">
-        <LinkedinIcon className="w-7 md:w-10 fill-gray-400" />
+        <LinkedinIcon className="w-7 md:w-10 fill-gray-400 hover:fill-slate-300" />
       </a>
       <a href="#github">
-        <TwitterIcon className="w-7 md:w-10 fill-gray-400" />
+        <TwitterIcon className="w-7 md:w-10 fill-gray-400 hover:fill-slate-300" />
       </a>
     </div>
   </div>
