@@ -14,7 +14,7 @@ const About = () => (
       </p>
       <div className="about-picture flex justify-center items-center relative my-8 md:my-0 md:w-1/2">
         <img className="max-w-sm mx-auto h-80 rounded-2xl object-cover absolute z-10" src={profilePic} alt="Ivan Robles Pic" />
-        <div className="w-80 max-w-sm mx-auto h-80 bg-purple-600 rounded-2xl rotate-12" />
+        <div className="purple-gradient w-72 md:w-80 max-w-sm mx-auto h-80 rounded-2xl rotate-12" />
       </div>
     </div>
   </section>
