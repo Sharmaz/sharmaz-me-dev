@@ -44,7 +44,7 @@ const Experience = () => {
     <section className="mx-4 my-10  max-w-screen-lg md:pl-8 md:mx-auto" id="experience">
       <h2 className="subtitle">Experience</h2>
       <div className="experience-container flex flex-col md:flex-row justify-center md:justify-start md:items-start items-center mt-4">
-        <nav className="w-full md:w-1/3 md:border-l-2 md:border-l-gray-400 mt-4 relative">
+        <nav className="w-full md:w-1/3 mt-4 relative">
           <ul className="flex md:flex-col justify-between md:justify-start items-start text-lg">
             {
               projects.map((project, i) => (
@@ -56,14 +56,14 @@ const Experience = () => {
                   </a>
                   {
                     active === i
-                      ? <div className="bg-dark-orchid w-full h-0.5 absolute bottom-0 left-0 shadow-[0_0px_5px_0px_rgba(0,0,0,1)] shadow-heliotrope" />
+                      ? <div className="bg-dark-orchid w-full md:w-0.5 h-0.5 md:h-full absolute bottom-0 left-0 md:-left-4 shadow-[0_0px_5px_0px_rgba(0,0,0,1)] shadow-heliotrope" />
                       : null
                   }
                 </li>
               ))
             }
           </ul>
-          <div className="bg-gray-400 opacity-50 w-full h-0.5 absolute bottom-0 left-0" />
+          <div className="bg-gray-400 opacity-50 w-full md:w-0.5 h-0.5 md:h-full absolute bottom-0 left-0" />
         </nav>
         {
           projects.map((project, i) => {
