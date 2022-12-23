@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import decorationExperienceImage from '../assets/images/tea-cup-dynamic-gradient.png';
+import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 const Experience = () => {
   const projects = [
@@ -40,11 +41,18 @@ const Experience = () => {
   ];
 
   const [active, setActive] = useState(0);
+  const options = {
+    root: null,
+    rootMargin: '150px',
+    threshold: 1.0,
+  };
+
+  const [containerRef, isVisible] = useIntersectionObserver(options);
 
   return (
     <section className="mx-4 my-10  max-w-screen-lg md:pl-8 md:mx-auto relative" id="experience">
       <h2 className="subtitle">Experience</h2>
-      <div className="experience-container flex flex-col md:flex-row justify-start md:items-start items-center mt-4 h-[630px] md:h-[450px]">
+      <div ref={containerRef} className="experience-container flex flex-col md:flex-row justify-start md:items-start items-center mt-4 h-[630px] md:h-[450px]">
         <nav className="w-full md:w-1/3 mt-4 relative">
           <ul className="flex md:flex-col justify-between md:justify-start items-start text-lg">
             {
@@ -84,7 +92,7 @@ const Experience = () => {
           })
         }
       </div>
-      <div className="absolute -bottom-6 md:bottom-0 right-4 md:right-auto md:left-4">
+      <div className={`absolute -bottom-6 md:bottom-0 right-4 md:right-auto md:left-4 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
         <img className="w-28 md:w-4/5" src={decorationExperienceImage} alt="gradient hot cup" />
       </div>
     </section>
