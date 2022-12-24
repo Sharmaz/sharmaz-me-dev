@@ -92,7 +92,7 @@ const Experience = () => {
           })
         }
       </div>
-      <div className={`absolute -bottom-6 md:bottom-0 right-4 md:right-auto md:left-4 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`absolute -bottom-6 md:bottom-0 right-4 md:right-auto md:-left-16 lg:left-4 transition-all ease-in-out duration-300 ${isVisible ? 'md:opacity-100 md:translate-x-20' : 'md:opacity-0'}`}>
         <img className="w-28 md:w-4/5" src={decorationExperienceImage} alt="gradient hot cup" />
       </div>
     </section>

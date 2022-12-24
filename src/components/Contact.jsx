@@ -41,7 +41,7 @@ const Contact = () => {
           <a href="mailto:irae45@gmail.com">i@ivanrobles.pro</a>
         </div>
       </div>
-      <div className={`absolute bottom-0 md:bottom-24 right-4 md:right-20 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`absolute bottom-0 md:bottom-24 right-4 md:right-0 lg:right-20 transition-all ease-in-out duration-300 ${isVisible ? 'md:opacity-100 md:-translate-x-20' : 'md:opacity-0'}`}>
         <img className="w-28 md:w-full" src={decorationContactImage} alt="gradient link" />
       </div>
     </section>
