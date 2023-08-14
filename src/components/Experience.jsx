@@ -58,6 +58,7 @@ const Experience = () => {
             {
               projects.map((project, i) => (
                 <li
+                  key={`project_${i + 1}`}
                   className={`${i === active ? 'relative z-10' : ''} md:ml-4`}
                 >
                   <a className="no-underline text-slate-400 px-4" href={`#item${i + 1}`} onClick={() => setActive(i)}>
@@ -78,12 +79,12 @@ const Experience = () => {
           projects.map((project, i) => {
             if (i === active) {
               return (
-                <article className="text-base my-4 md:w-1/2">
+                <article key={`project_${i + 1}`} className="text-base my-4 md:w-1/2">
                   <div className="my-4">{`[${project.date}]`}</div>
                   <div className="my-4">{project.description}</div>
                   <div className="my-4">{`Role: ${project.role}`}</div>
                   <ul>
-                    {project.tasks.map((task) => <li className="text-base my-4 ml-8 before:content-['⬡'] before:-ml-8 before:mr-[13px] before:text-xl before:text-dark-orchid">{task}</li>)}
+                    {project.tasks.map((task, index) => <li key={`task_${index + 1}`} className="text-base my-4 ml-8 before:content-['⬡'] before:-ml-8 before:mr-[13px] before:text-xl before:text-dark-orchid">{task}</li>)}
                   </ul>
                 </article>
               );

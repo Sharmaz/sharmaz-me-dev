@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import useFetch from './hooks/useFetch';
 import config from '../config';
 import Layout from './layout/Layout';
 import Hero from './components/Hero';
@@ -10,20 +10,24 @@ import Contact from './components/Contact';
 import './app.css';
 
 const App = () => {
-  const [dev, setDev] = useState({});
   const { apiKey, baseUrl, userId } = config;
+  const options = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      api: apiKey,
+    },
+  };
 
-  useEffect(async () => {
-    const response = await fetch(`${baseUrl}/api/v1/users/${userId}`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        api: apiKey,
-      },
-    });
-    const data = await response.json();
-    setDev(data);
-  }, []);
+  const { dev, loading, error } = useFetch(`${baseUrl}/api/v1/users/${userId}`, options);
+
+  if (error) {
+    return <div>Error</div>;
+  }
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <Layout profile={dev.profile}>
