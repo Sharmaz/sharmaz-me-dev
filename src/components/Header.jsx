@@ -57,7 +57,7 @@ const Header = () => {
               <a href="#experience" onClick={showMenu}>Experience</a>
             </li>
             <li className="my-8">
-              <a href="#work" onClick={showMenu}>Work</a>
+              <a href="#work" onClick={showMenu}>Side Projects</a>
             </li>
             <li className="my-8">
               <a href="#contact" onClick={showMenu}>Contact me</a>

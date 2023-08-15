@@ -32,11 +32,11 @@ const App = () => {
   return (
     <Layout profile={dev.profile}>
       <>
-        <Hero />
-        <About />
-        <Experience />
-        <Work />
-        <Contact />
+        <Hero name={dev.profile.name} />
+        <About about={dev.profile.about} profilePic={dev.profile.profilePic} />
+        <Experience jobs={dev.jobs} />
+        <Work projects={dev.projects} />
+        <Contact email={dev.email} />
       </>
     </Layout>
   );
