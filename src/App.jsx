@@ -32,7 +32,7 @@ const App = () => {
   return (
     <Layout profile={dev.profile}>
       <>
-        <Hero name={dev.profile.name} />
+        <Hero name={dev.profile.name} resumeLink={dev.profile.resume} />
         <About about={dev.profile.about} profilePic={dev.profile.profilePic} />
         <Experience jobs={dev.jobs} />
         <Work projects={dev.projects} />
