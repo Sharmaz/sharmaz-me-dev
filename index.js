@@ -82,7 +82,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar config = {\n  apiKey: \"MISSING_ENV_VAR\".API_KEY,\n  baseUrl: \"MISSING_ENV_VAR\".BASE_URL,\n  userId: \"MISSING_ENV_VAR\".USER_ID\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (config);\n\n//# sourceURL=webpack://sharmaz-me/./config/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar config = {\n  apiKey: \"0MSgsz8yGh4PBXQjkb1qUwDHWifJYKmN\",\n  baseUrl: \"https://admin.ivanrobles.pro\",\n  userId: \"5aa43ddd-9761-47a1-8a54-acd004ae2db0\"\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (config);\n\n//# sourceURL=webpack://sharmaz-me/./config/index.js?");
 
 /***/ }),
 
