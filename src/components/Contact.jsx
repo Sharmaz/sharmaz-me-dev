@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 import decorationContactImage from '../assets/images/link-dynamic-gradient.png';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
-const Contact = () => {
+const Contact = ({ email }) => {
   const options = {
     root: null,
     rootMargin: '150px',
@@ -38,7 +39,7 @@ const Contact = () => {
             My inbox is open even if I don&apos;t need to look for a new opportunity.
             So If you write me to ask me something or to say hello, I will get back to you.
           </p>
-          <a href="mailto:irae45@gmail.com">i@ivanrobles.pro</a>
+          <a href={`mailto:${email}`}>{email}</a>
         </div>
       </div>
       <div className={`absolute bottom-0 md:bottom-24 right-4 md:right-0 lg:right-20 transition-all ease-in-out duration-300 ${isVisible ? 'md:opacity-100 md:-translate-x-20' : 'md:opacity-0'}`}>
@@ -47,4 +48,9 @@ const Contact = () => {
     </section>
   );
 };
+
+Contact.propTypes = {
+  email: PropTypes.string.isRequired,
+};
+
 export default Contact;
