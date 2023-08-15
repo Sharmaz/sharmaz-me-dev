@@ -4,7 +4,7 @@ import Header from '../components/Header';
 
 const Layout = ({ children, profile }) => (
   <div>
-    <Header />
+    <Header resumeLink={profile.resume} />
     {children}
     <Footer
       name={profile.name}
@@ -22,6 +22,7 @@ Layout.propTypes = {
     github: PropTypes.string,
     linkedIn: PropTypes.string,
     twitter: PropTypes.string,
+    resume: PropTypes.string,
   }),
 };
 

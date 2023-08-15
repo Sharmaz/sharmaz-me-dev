@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import decorationHeroImage from '../assets/images/cup-dynamic-gradient.png';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
-const Hero = ({ name }) => {
+const Hero = ({ name, resumeLink }) => {
   const options = {
     root: null,
     rootMargin: '150px',
@@ -17,7 +17,14 @@ const Hero = ({ name }) => {
       <span className="block">{`I’m ${name},`}</span>
       <span className="block">a Frontend Developer</span>
       <div className="button-purple mt-8 md:mt-16 w-[248px] h-14 flex align-middle">
-        <button type="button" className="bg-background p-2 text-2xl rounded-full mx-1 my-1 w-60">Resume</button>
+        <a
+          className="bg-background p-2 text-2xl rounded-full mx-1 my-1 w-60 text-center"
+          href={resumeLink}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Resume
+        </a>
       </div>
       <div className={`absolute top-0 right-0 md:right-8 transition-all ease-in-out duration-300 ${isVisible ? 'md:opacity-100 md:-translate-x-20' : 'md:opacity-0'}`}>
         <img className="w-28 md:w-full" src={decorationHeroImage} alt="gradient cup" />
@@ -28,6 +35,7 @@ const Hero = ({ name }) => {
 
 Hero.propTypes = {
   name: PropTypes.string.isRequired,
+  resumeLink: PropTypes.string.isRequired,
 };
 
 export default Hero;

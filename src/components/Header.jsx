@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import logo from '../assets/images/logo.png';
 
-const Header = () => {
+const Header = ({ resumeLink }) => {
   const [show, setShow] = useState(false);
   function showMenu() {
     setShow(!show);
@@ -37,14 +38,21 @@ const Header = () => {
             <a href="#experience" className="hover:drop-shadow-3xl">Experience</a>
           </li>
           <li className="mx-2">
-            <a href="#work" className="hover:drop-shadow-3xl">Work</a>
+            <a href="#work" className="hover:drop-shadow-3xl">Side Projects</a>
           </li>
           <li className="mx-2">
             <a href="#contact" className="hover:drop-shadow-3xl">Contact</a>
           </li>
         </ul>
         <div className="button-purple hidden md:block  h-10 w-[132px]">
-          <button type="button" className="hidden bg-background md:block w-32  p-1 text-xl rounded-full m-0.5">Resume</button>
+          <a
+            className="hidden bg-background md:block w-32  p-1 text-xl rounded-full m-0.5 text-center"
+            href={resumeLink}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Resume
+          </a>
         </div>
         <div className="purple-gradient w-full h-0.5 absolute bottom-0 left-0" />
 
@@ -63,13 +71,24 @@ const Header = () => {
               <a href="#contact" onClick={showMenu}>Contact me</a>
             </li>
           </ul>
-          <div className="button-purple ml-4 mt-4 w-[248px]">
-            <button type="button" className="bg-background p-2 text-2xl rounded-full ml-1 my-1 w-60">Resume</button>
+          <div className="button-purple ml-4 mt-4 w-[248px] flex justify-center align-middle text-center">
+            <a
+              className="bg-background p-2 text-2xl rounded-full my-1 w-60"
+              href={resumeLink}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Resume
+            </a>
           </div>
         </nav>
       </nav>
     </header>
   );
+};
+
+Header.propTypes = {
+  resumeLink: PropTypes.string.isRequired,
 };
 
 export default Header;
