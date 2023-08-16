@@ -17,16 +17,16 @@ const Contact = ({ email }) => {
         <div className="form-container p-0.5 w-full my-8 md:w-1/2">
           <form className="bg-background rounded-2xl p-4" action="https://formspree.io/f/irae45@gmail.com" method="post">
             <div className="form-field flex align-middle my-3 md:my-4 w-full">
-              <input className="rounded-2xl p-4 w-full m-0.5 bg-background" type="text" name="" id="" placeholder="Full Name" />
+              <input className="rounded-2xl p-4 w-full m-0.5 bg-background" type="text" name="fullname" placeholder="Full Name" />
             </div>
             <div className="form-field flex align-middle my-3 md:my-4 w-full">
-              <input className="rounded-2xl p-4 w-full m-0.5 bg-background" type="email" name="" id="" placeholder="Email Address" />
+              <input className="rounded-2xl p-4 w-full m-0.5 bg-background" type="email" name="email" placeholder="Email Address" />
             </div>
             <div className="form-field flex align-middle my-3 md:my-4">
-              <input className="rounded-2xl p-4 w-full m-0.5 bg-background" type="text" name="" id="" placeholder="Subject" />
+              <input className="rounded-2xl p-4 w-full m-0.5 bg-background" type="text" name="subject" placeholder="Subject" />
             </div>
             <div className="form-field flex align-middle my-3 md:my-8">
-              <textarea className="rounded-2xl p-4 w-full m-0.5 bg-background h-72 md:h-auto" name="" id="" cols="30" rows="5" placeholder="How can I help you?" />
+              <textarea className="rounded-2xl p-4 w-full m-0.5 bg-background h-72 md:h-auto" name="message" cols="30" rows="5" placeholder="How can I help you?" />
             </div>
             <div className="button-orange flex align-middle mt-4 md:mt-8 md:w-[248px]">
               <button className="bg-background rounded-full p-4 w-full m-0.5" type="submit">Send Message</button>
