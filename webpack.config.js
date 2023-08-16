@@ -3,6 +3,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
 const htmlPlugin = new HtmlWebPackPlugin({
+  favicon: './src/assets/images/favicon.png',
   template: './src/index.html',
   filename: 'index.html',
 });
