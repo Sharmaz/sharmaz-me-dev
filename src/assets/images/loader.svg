@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="209px" height="209px" viewBox="0 0 209 209" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Loader</title>
+    <defs>
+        <linearGradient x1="84.2703349%" y1="104.022129%" x2="10.7767644%" y2="9.9805622%" id="linearGradient-1">
+            <stop stop-color="#00F2FF" offset="0%"></stop>
+            <stop stop-color="#FE48EB" offset="49.1504589%"></stop>
+            <stop stop-color="#FEAE48" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Profile-Photo" transform="translate(-96.000000, -96.000000)" stroke="url(#linearGradient-1)" stroke-width="8">
+            <g id="Loader" transform="translate(96.000000, 96.000000)">
+                <path d="M104.5,4.61880215 L190.999655,54.5594011 L190.999655,154.440599 L104.5,204.381198 L18.0003453,154.440599 L18.0003453,54.5594011 L104.5,4.61880215 Z" id="Polygon"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -37,7 +37,7 @@ window.IntersectionObserver = jest.fn().mockImplementation(intersectionObserverM
 describe('App tests', () => {
   it('should loading', () => {
     render(<App />);
-    const loadingMessage = screen.getByText('Loading...');
-    expect(loadingMessage).toBeInTheDocument();
+    const loader = screen.getByTestId('loader');
+    expect(loader).toBeInTheDocument();
   });
 });

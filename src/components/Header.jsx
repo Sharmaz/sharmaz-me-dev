@@ -12,7 +12,7 @@ const Header = ({ resumeLink }) => {
   return (
     <header className="fixed w-full top-0 z-20 backdrop-blur">
       <nav className="flex items-center justify-between md:justify-evenly py-2 relative max-w-screen-lg mx-auto">
-        <a href="/" className="ml-4 md:ml-0">
+        <a href="/me" className="ml-4 md:ml-0">
           <div className="flex items-center">
             <img src={logo} alt="Ivan Robles" width={48} />
             <h3 className="text-4xl md:text-2xl ml-2">Ivan Robles</h3>
