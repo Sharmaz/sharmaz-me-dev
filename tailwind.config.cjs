@@ -17,6 +17,7 @@ module.exports = {
       },
       animation: {
         'purple-animation': 'animationGradient 2s ease alternate infinite',
+        'spin-slow': 'spin 5s linear infinite',
       },
       keyframes: {
         animationGradient: {

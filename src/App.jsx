@@ -6,6 +6,7 @@ import About from './components/About';
 import Experience from './components/Experience';
 import Work from './components/Work';
 import Contact from './components/Contact';
+import Loader from './components/Loader';
 
 import './app.css';
 
@@ -26,7 +27,7 @@ const App = () => {
   }
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   return (
