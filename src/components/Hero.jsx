@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import decorationHeroImage from '../assets/images/cup-dynamic-gradient.png';
+import decorationHeroImage from '../assets/images/cup-dynamic-gradient.webp';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 const Hero = ({ name, resumeLink }) => {

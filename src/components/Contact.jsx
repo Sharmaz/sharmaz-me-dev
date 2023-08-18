@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import decorationContactImage from '../assets/images/link-dynamic-gradient.png';
+import decorationContactImage from '../assets/images/link-dynamic-gradient.webp';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 const Contact = ({ email }) => {

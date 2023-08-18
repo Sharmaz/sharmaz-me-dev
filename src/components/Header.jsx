@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/logo.webp';
 
 const Header = ({ resumeLink }) => {
   const [show, setShow] = useState(false);

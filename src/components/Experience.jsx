@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import decorationExperienceImage from '../assets/images/tea-cup-dynamic-gradient.png';
+import decorationExperienceImage from '../assets/images/tea-cup-dynamic-gradient.webp';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 const Experience = ({ jobs }) => {
