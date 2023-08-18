@@ -15,10 +15,10 @@ const Card = ({
       <div className="flex justify-between m-4">
         <FolderIcon className="w-16" />
         <div className="flex">
-          <a href={githubLink} className="mr-2">
+          <a href={githubLink} aria-label="Github Repo" className="github-repo mr-2">
             <GithubIcon className="w-7 fill-slate-300" />
           </a>
-          <a href={demoLink} className="mr-2">
+          <a href={demoLink} aria-label="Demo" className="demo-link mr-2">
             <ExternalIcon className="w-7 fill-slate-300" />
           </a>
         </div>
