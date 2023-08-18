@@ -15,13 +15,13 @@ const Footer = ({
       {`© 2023 ${name}`}
     </span>
     <div className="flex">
-      <a href={github} className="mr-2">
+      <a href={github} aria-label="Github" className="github mr-2">
         <GithubIcon className="w-7 md:w-10 fill-gray-400 hover:fill-slate-300" />
       </a>
-      <a href={linkedIn} className="mr-2">
+      <a href={linkedIn} aria-label="LinkedIn" className="linkedin mr-2">
         <LinkedinIcon className="w-7 md:w-10 fill-gray-400 hover:fill-slate-300" />
       </a>
-      <a href={twitter}>
+      <a href={twitter} aria-label="twitter" className="twitter">
         <TwitterIcon className="w-7 md:w-10 fill-gray-400 hover:fill-slate-300" />
       </a>
     </div>
