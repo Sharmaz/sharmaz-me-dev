@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/logo.webp';
 
 const Header = ({ resumeLink }) => {
   const [show, setShow] = useState(false);
@@ -14,7 +14,7 @@ const Header = ({ resumeLink }) => {
       <nav className="flex items-center justify-between md:justify-evenly py-2 relative max-w-screen-lg mx-auto">
         <a href="/me" className="ml-4 md:ml-0">
           <div className="flex items-center">
-            <img src={logo} alt="Ivan Robles" width={48} />
+            <img src={logo} width={48} height={48} alt="Ivan Robles" />
             <h3 className="text-4xl md:text-2xl ml-2">Ivan Robles</h3>
           </div>
         </a>

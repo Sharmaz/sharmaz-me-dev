@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import decorationExperienceImage from '../assets/images/tea-cup-dynamic-gradient.png';
+import decorationExperienceImage from '../assets/images/tea-cup-dynamic-gradient.webp';
+import decorationExperienceImageSmall from '../assets/images/tea-cup-dynamic-gradient-small.webp';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 const Experience = ({ jobs }) => {
@@ -62,7 +63,15 @@ const Experience = ({ jobs }) => {
         }
       </div>
       <div className={`absolute -bottom-6 md:bottom-0 right-4 md:right-auto md:-left-16 lg:left-4 transition-all ease-in-out duration-300 ${isVisible ? 'md:opacity-100 md:translate-x-20' : 'md:opacity-0'}`}>
-        <img className="w-28 md:w-4/5" src={decorationExperienceImage} alt="gradient hot cup" />
+        <img
+          className="w-28 md:w-4/5"
+          srcSet={`${decorationExperienceImageSmall} 112w, ${decorationExperienceImage} 800w`}
+          sizes="(max-width: 767px) 112px, 800px"
+          src={decorationExperienceImage}
+          width={218}
+          height={228}
+          alt="gradient hot cup"
+        />
       </div>
     </section>
   );

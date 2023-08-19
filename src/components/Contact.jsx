@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import decorationContactImage from '../assets/images/link-dynamic-gradient.png';
+import decorationContactImage from '../assets/images/link-dynamic-gradient.webp';
+import decorationContactImageSmall from '../assets/images/link-dynamic-gradient-small.webp';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 const Contact = ({ email }) => {
@@ -43,7 +44,15 @@ const Contact = ({ email }) => {
         </div>
       </div>
       <div className={`absolute bottom-0 md:bottom-24 right-4 md:right-0 lg:right-20 transition-all ease-in-out duration-300 ${isVisible ? 'md:opacity-100 md:-translate-x-20' : 'md:opacity-0'}`}>
-        <img className="w-28 md:w-full" src={decorationContactImage} alt="gradient link" />
+        <img
+          className="w-28 md:w-full"
+          srcSet={`${decorationContactImageSmall} 112w, ${decorationContactImage} 800w`}
+          sizes="(max-width: 767px) 112px, 800px"
+          src={decorationContactImage}
+          width={262}
+          height={240}
+          alt="gradient link"
+        />
       </div>
     </section>
   );

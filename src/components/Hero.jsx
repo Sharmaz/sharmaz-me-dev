@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import decorationHeroImage from '../assets/images/cup-dynamic-gradient.png';
+import decorationHeroImage from '../assets/images/cup-dynamic-gradient.webp';
+import decorationHeroImageSmall from '../assets/images/cup-dynamic-gradient-small.webp';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 const Hero = ({ name, resumeLink }) => {
@@ -27,7 +28,15 @@ const Hero = ({ name, resumeLink }) => {
         </a>
       </div>
       <div className={`absolute top-0 right-0 md:right-8 transition-all ease-in-out duration-300 ${isVisible ? 'md:opacity-100 md:-translate-x-20' : 'md:opacity-0'}`}>
-        <img className="w-28 md:w-full" src={decorationHeroImage} alt="gradient cup" />
+        <img
+          className="w-28 md:w-full"
+          srcSet={`${decorationHeroImageSmall} 112w, ${decorationHeroImage} 800w`}
+          sizes="(max-width: 767px) 112px, 800px"
+          src={decorationHeroImage}
+          width={262}
+          height={244}
+          alt="gradient cup"
+        />
       </div>
     </section>
   );
