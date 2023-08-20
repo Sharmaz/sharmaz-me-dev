@@ -1,43 +1,40 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import React from 'react';
 import App from '../App';
-
-const mockedData = {
-  id: '01',
-  email: 'mock@ivanrobles.pro',
-  role: 'admin',
-  createdAt: '2023-08-11T20:36:02.000Z',
-  profile: {
-    id: '01',
-    userId: '01',
-    name: 'Admin',
-    profilePic: 'https://no-photo.com',
-    about: 'App Owner',
-    blog: 'https://no-blog.com',
-    github: 'https://no-github.com',
-    linkedIn: 'https://no-linkedin.com/',
-    twitter: 'https://no-twitter.com/',
-  },
-  jobs: [],
-  projects: [],
-};
+import userDataMock from './__mocks__/userDataMock';
 
 const intersectionObserverMock = () => ({
   observe: () => null,
 });
 
 beforeEach(() => {
-  global.fetch = jest.fn(() => Promise.resolve({
-    json: () => Promise.resolve(mockedData),
-  }));
+  window.IntersectionObserver = jest.fn().mockImplementation(intersectionObserverMock);
 });
 
-window.IntersectionObserver = jest.fn().mockImplementation(intersectionObserverMock);
-
-describe('App tests', () => {
-  it('should loading', () => {
+describe('test app compoment', () => {
+  test('should loading', () => {
+    global.fetch = jest.fn().mockImplementation(() => new Promise(
+      // eslint-disable-next-line no-promise-executor-return
+      (resolve) => resolve({ json: () => userDataMock, ok: true }),
+    ));
     render(<App />);
     const loader = screen.getByTestId('loader');
     expect(loader).toBeInTheDocument();
+  });
+  test('render data', async () => {
+    global.fetch = jest.fn().mockImplementation(() => new Promise(
+      // eslint-disable-next-line no-promise-executor-return
+      (resolve) => resolve({ json: () => userDataMock, ok: true }),
+    ));
+    render(<App />);
+    await waitFor(() => screen.getByText(/I’m Admin/));
+    await expect(screen.getByText(/I’m Admin/)).toBeInTheDocument();
+  });
+  test('failing fetch data', () => {
+    // eslint-disable-next-line new-cap
+    global.fetch = jest.fn().mockImplementation(() => new Promise.reject(new Error('something bad happened')));
+    render(<App />);
+    const renderError = screen.getByText(/Error/);
+    expect(renderError).toBeInTheDocument();
   });
 });

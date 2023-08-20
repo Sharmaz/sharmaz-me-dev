@@ -6,7 +6,7 @@
   },
   "extends": [
     "plugin:react/jsx-runtime",
-    "plugin:jest/recommended",
+    "plugin:jest/style",
     "airbnb"
   ],
   "overrides": [
