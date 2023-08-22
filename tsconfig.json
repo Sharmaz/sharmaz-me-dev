@@ -2,13 +2,14 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "outDir": "./dist",
     "strict": true,
     "esModuleInterop": true
   },
   "include": [
-    "./src/**/*"
+    "./src/**/*",
+    "./src/custom.d.ts"
   ],
   "exclude": ["./node_modules"],
 }

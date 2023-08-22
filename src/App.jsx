@@ -6,7 +6,7 @@ import About from './components/About';
 import Experience from './components/Experience';
 import Work from './components/Work';
 import Contact from './components/Contact';
-import Loader from './components/Loader';
+import Loader from './components/Loader.tsx';
 
 import './app.css';
 
