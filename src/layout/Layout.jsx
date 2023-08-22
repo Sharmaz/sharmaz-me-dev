@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import Footer from '../components/Footer';
-import Header from '../components/Header';
+import Header from '../components/Header.tsx';
 
 const Layout = ({ children, profile }) => (
   <div>
