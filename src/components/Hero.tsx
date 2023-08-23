@@ -3,7 +3,12 @@ import decorationHeroImage from '../assets/images/cup-dynamic-gradient.webp';
 import decorationHeroImageSmall from '../assets/images/cup-dynamic-gradient-small.webp';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
-const Hero = ({ name, resumeLink }) => {
+type HeroProps = {
+  name: string,
+  resumeLink: string,
+};
+
+const Hero = ({ name, resumeLink }: HeroProps) => {
   const options = {
     root: null,
     rootMargin: '150px',
