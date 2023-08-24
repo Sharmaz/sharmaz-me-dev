@@ -18,7 +18,7 @@ type Job = {
 
 type Jobs = Job[];
 
-const Experience: React.FC<{ jobs: Jobs}> = ({ jobs }) => {
+const Experience: React.FC<{ jobs: Jobs }> = ({ jobs }) => {
   const [active, setActive] = useState(0);
   const options = {
     root: null,
@@ -35,6 +35,8 @@ const Experience: React.FC<{ jobs: Jobs}> = ({ jobs }) => {
   return (
     <section className="mx-4 my-10  max-w-screen-lg md:pl-8 md:mx-auto relative" id="experience">
       <h2 className="subtitle">Experience</h2>
+      {/* eslint-disable @typescript-eslint/ban-ts-comment */}
+      {/* @ts-ignore */}
       <div ref={containerRef} className="experience-container flex flex-col md:flex-row justify-start md:items-start items-center mt-4 h-[630px] md:h-[450px]">
         <nav className="w-full md:w-1/3 mt-4 relative">
           <ul className="flex md:flex-col justify-between md:justify-start items-start text-lg">

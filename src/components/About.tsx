@@ -1,7 +1,7 @@
 type AboutProps = {
   about: string,
   profilePic: string,
-}
+};
 
 const About = ({ about, profilePic }: AboutProps) => (
   <section className="mx-4 my-10  max-w-screen-lg md:pl-8 md:mx-auto" id="about">

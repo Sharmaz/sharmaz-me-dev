@@ -1,9 +1,5 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-ignore
-import Footer from '../components/Footer.tsx';
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-ignore
-import Header from '../components/Header.tsx';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 type LayoutProps = {
   children: JSX.Element | string,
@@ -19,7 +15,7 @@ type LayoutProps = {
     twitter: string,
     resume: string,
   }
-}
+};
 
 const Layout = ({ children, profile }: LayoutProps) => (
   <div>

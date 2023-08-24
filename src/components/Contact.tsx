@@ -13,6 +13,8 @@ const Contact = ({ email }: { email: string }) => {
   return (
     <section className="mx-4 my-10  max-w-screen-lg md:px-8 md:mx-auto relative" id="contact">
       <h2 className="subtitle">Contact me</h2>
+      {/* eslint-disable @typescript-eslint/ban-ts-comment */}
+      {/* @ts-ignore */}
       <div className="flex flex-col md:flex-row" ref={containerRef}>
         <div className="form-container p-0.5 w-full my-8 md:w-1/2">
           <form className="bg-background rounded-2xl p-4" action="https://formspree.io/f/irae45@gmail.com" method="post">

@@ -8,7 +8,7 @@ type CardProps = {
   githubLink: string,
   demoLink: string,
   tags: string[],
-}
+};
 
 const Card = ({
   name,

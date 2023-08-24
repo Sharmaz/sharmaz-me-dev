@@ -1,10 +1,26 @@
 import { useRef, useEffect, useState } from 'react';
 
-const useIntersectionObserver = ((options) => {
-  const containerRef = useRef(null);
+type ObserverOptions = {
+  root: HTMLElement | null,
+  rootMargin: string,
+  threshold: number,
+};
+
+type ObserverEntry = {
+  boundingClientRect: DOMRectReadOnly,
+  intersectionRatio: number,
+  intersectionRect: DOMRectReadOnly,
+  isIntersecting: boolean,
+  rootBounds: DOMRectReadOnly | null,
+  target: Element,
+  time: number,
+};
+
+const useIntersectionObserver = ((options: ObserverOptions) => {
+  const containerRef = useRef<HTMLDivElement | HTMLElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  const callbackFunction = (entries) => {
+  const callbackFunction = (entries: ObserverEntry[]) => {
     const [entry] = entries;
     setIsVisible(entry.isIntersecting);
   };

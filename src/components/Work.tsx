@@ -1,7 +1,5 @@
 import React from 'react';
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-ignore
-import Card from './Card.tsx';
+import Card from './Card';
 
 type Project = {
   id: string,

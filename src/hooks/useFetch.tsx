@@ -6,7 +6,7 @@ type FetchOptions = {
     'Content-Type': string,
     api: string
   },
-}
+};
 const useFetch = (url: string, options: FetchOptions) => {
   const [dev, setDev] = useState({});
   const [loading, setLoading] = useState(true);
