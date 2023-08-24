@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 import logo from '../assets/images/logo.webp';
 
 const Header = ({ resumeLink }: { resumeLink: string }) => {
@@ -85,10 +84,6 @@ const Header = ({ resumeLink }: { resumeLink: string }) => {
       </nav>
     </header>
   );
-};
-
-Header.propTypes = {
-  resumeLink: PropTypes.string.isRequired,
 };
 
 export default Header;

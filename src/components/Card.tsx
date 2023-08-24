@@ -1,7 +1,14 @@
-import PropTypes from 'prop-types';
 import FolderIcon from '../assets/images/folder_alt_icon.svg';
 import GithubIcon from '../assets/images/github_alt_icon.svg';
 import ExternalIcon from '../assets/images/external_link_alt_icon.svg';
+
+type CardProps = {
+  name: string,
+  desc: string,
+  githubLink: string,
+  demoLink: string,
+  tags: string[],
+}
 
 const Card = ({
   name,
@@ -9,7 +16,7 @@ const Card = ({
   githubLink,
   demoLink,
   tags,
-}) => (
+}: CardProps) => (
   <div className="work-card flex items-center justify-center  my-8 md:w-2/5">
     <div className="work-item rounded-2xl bg-background m-0.5 w-full">
       <div className="flex justify-between m-4">
@@ -37,13 +44,5 @@ const Card = ({
     </div>
   </div>
 );
-
-Card.propTypes = {
-  name: PropTypes.string.isRequired,
-  desc: PropTypes.string.isRequired,
-  githubLink: PropTypes.string.isRequired,
-  demoLink: PropTypes.string.isRequired,
-  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
 
 export default Card;

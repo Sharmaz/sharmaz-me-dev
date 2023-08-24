@@ -1,7 +1,23 @@
-import PropTypes from 'prop-types';
-import Card from './Card';
+import React from 'react';
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-ignore
+import Card from './Card.tsx';
 
-const Work = ({ projects }) => (
+type Project = {
+  id: string,
+  userId: string,
+  name: string,
+  description: string,
+  githubLink: string,
+  demoLink: string,
+  tags: {
+    list: string[],
+  },
+};
+
+type Projects = Project[];
+
+const Work: React.FC<{ projects: Projects }> = ({ projects }) => (
   <section className="mx-4 my-10  max-w-screen-lg md:pl-8 md:mx-auto" id="work">
     { !projects.length
       ? <div>No Side Projects</div>
@@ -26,26 +42,5 @@ const Work = ({ projects }) => (
       )}
   </section>
 );
-
-Work.propTypes = {
-  projects: PropTypes.arrayOf(PropTypes.shape),
-};
-
-Work.defaultProps = {
-  projects: [
-    {
-      name: 'project_name',
-      description: 'Project',
-      githubLink: 'https://github.com/Sharmaz/project/',
-      demoLink: 'https://sharmaz.github.io/project/',
-      details: {
-        list: [
-          'Web',
-          'Javascript',
-        ],
-      },
-    },
-  ],
-};
 
 export default Work;

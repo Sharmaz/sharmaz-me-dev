@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import GithubIcon from '../assets/images/github_icon.svg';
 import LinkedinIcon from '../assets/images/linkedin_icon.svg';
 import TwitterIcon from '../assets/images/twitter_icon.svg';
@@ -34,12 +33,5 @@ const Footer = ({
     </div>
   </div>
 );
-
-Footer.propTypes = {
-  name: PropTypes.string.isRequired,
-  github: PropTypes.string.isRequired,
-  linkedIn: PropTypes.string.isRequired,
-  twitter: PropTypes.string.isRequired,
-};
 
 export default Footer;

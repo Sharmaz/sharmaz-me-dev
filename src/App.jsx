@@ -4,7 +4,7 @@ import Layout from './layout/Layout';
 import Hero from './components/Hero.tsx';
 import About from './components/About.tsx';
 import Experience from './components/Experience.tsx';
-import Work from './components/Work';
+import Work from './components/Work.tsx';
 import Contact from './components/Contact';
 import Loader from './components/Loader.tsx';
 

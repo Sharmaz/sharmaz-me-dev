@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import decorationHeroImage from '../assets/images/cup-dynamic-gradient.webp';
 import decorationHeroImageSmall from '../assets/images/cup-dynamic-gradient-small.webp';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
@@ -45,11 +44,6 @@ const Hero = ({ name, resumeLink }: HeroProps) => {
       </div>
     </section>
   );
-};
-
-Hero.propTypes = {
-  name: PropTypes.string.isRequired,
-  resumeLink: PropTypes.string.isRequired,
 };
 
 export default Hero;
