@@ -2,23 +2,9 @@ import React, { useState } from 'react';
 import decorationExperienceImage from '../assets/images/tea-cup-dynamic-gradient.webp';
 import decorationExperienceImageSmall from '../assets/images/tea-cup-dynamic-gradient-small.webp';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
+import { Job } from '../types/dev';
 
-type Job = {
-  id: string,
-  userId: string,
-  name: string,
-  dateStarted: string,
-  dateEnded: string,
-  description: string,
-  role: string,
-  details?: {
-    list?: string[],
-  },
-};
-
-type Jobs = Job[];
-
-const Experience: React.FC<{ jobs: Jobs }> = ({ jobs }) => {
+const Experience: React.FC<{ jobs: Job[] }> = ({ jobs }) => {
   const [active, setActive] = useState(0);
   const options = {
     root: null,

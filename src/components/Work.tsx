@@ -1,21 +1,8 @@
 import React from 'react';
 import Card from './Card';
+import { Project } from '../types/dev';
 
-type Project = {
-  id: string,
-  userId: string,
-  name: string,
-  description: string,
-  githubLink: string,
-  demoLink: string,
-  tags: {
-    list: string[],
-  },
-};
-
-type Projects = Project[];
-
-const Work: React.FC<{ projects: Projects }> = ({ projects }) => (
+const Work: React.FC<{ projects: Project[] }> = ({ projects }) => (
   <section className="mx-4 my-10  max-w-screen-lg md:pl-8 md:mx-auto" id="work">
     { !projects.length
       ? <div>No Side Projects</div>
@@ -31,7 +18,7 @@ const Work: React.FC<{ projects: Projects }> = ({ projects }) => (
                   desc={project.description}
                   githubLink={project.githubLink}
                   demoLink={project.demoLink}
-                  tags={project.tags.list}
+                  tags={project.tags?.list ? project.tags.list : []}
                 />
               ))
             }
