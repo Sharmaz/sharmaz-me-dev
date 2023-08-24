@@ -1,4 +1,4 @@
-import useFetch from './hooks/useFetch';
+import useFetch from './hooks/useFetch.tsx';
 import config from '../config';
 import Layout from './layout/Layout.tsx';
 import Hero from './components/Hero.tsx';
