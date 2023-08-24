@@ -1,6 +1,9 @@
-import PropTypes from 'prop-types';
+type AboutProps = {
+  about: string,
+  profilePic: string,
+};
 
-const About = ({ about, profilePic }) => (
+const About = ({ about, profilePic }: AboutProps) => (
   <section className="mx-4 my-10  max-w-screen-lg md:pl-8 md:mx-auto" id="about">
     <h2 className="subtitle">About me</h2>
     <div className="about-container flex flex-col md:flex-row justify-center items-center">
@@ -14,10 +17,5 @@ const About = ({ about, profilePic }) => (
     </div>
   </section>
 );
-
-About.propTypes = {
-  about: PropTypes.string.isRequired,
-  profilePic: PropTypes.string.isRequired,
-};
 
 export default About;

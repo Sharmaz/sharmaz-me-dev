@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 import logo from '../assets/images/logo.webp';
 
-const Header = ({ resumeLink }) => {
+const Header = ({ resumeLink }: { resumeLink: string }) => {
   const [show, setShow] = useState(false);
   function showMenu() {
     setShow(!show);
@@ -85,10 +84,6 @@ const Header = ({ resumeLink }) => {
       </nav>
     </header>
   );
-};
-
-Header.propTypes = {
-  resumeLink: PropTypes.string.isRequired,
 };
 
 export default Header;

@@ -1,7 +1,8 @@
-import PropTypes from 'prop-types';
+import React from 'react';
 import Card from './Card';
+import { Project } from '../types/dev';
 
-const Work = ({ projects }) => (
+const Work: React.FC<{ projects: Project[] }> = ({ projects }) => (
   <section className="mx-4 my-10  max-w-screen-lg md:pl-8 md:mx-auto" id="work">
     { !projects.length
       ? <div>No Side Projects</div>
@@ -17,7 +18,7 @@ const Work = ({ projects }) => (
                   desc={project.description}
                   githubLink={project.githubLink}
                   demoLink={project.demoLink}
-                  tags={project.tags.list}
+                  tags={project.tags?.list ? project.tags.list : []}
                 />
               ))
             }
@@ -26,26 +27,5 @@ const Work = ({ projects }) => (
       )}
   </section>
 );
-
-Work.propTypes = {
-  projects: PropTypes.arrayOf(PropTypes.shape),
-};
-
-Work.defaultProps = {
-  projects: [
-    {
-      name: 'project_name',
-      description: 'Project',
-      githubLink: 'https://github.com/Sharmaz/project/',
-      demoLink: 'https://sharmaz.github.io/project/',
-      details: {
-        list: [
-          'Web',
-          'Javascript',
-        ],
-      },
-    },
-  ],
-};
 
 export default Work;

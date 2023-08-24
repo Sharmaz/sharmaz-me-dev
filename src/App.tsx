@@ -7,6 +7,7 @@ import Experience from './components/Experience';
 import Work from './components/Work';
 import Contact from './components/Contact';
 import Loader from './components/Loader';
+import { Profile, Job, Project } from './types/dev';
 
 import './app.css';
 
@@ -30,14 +31,28 @@ const App = () => {
     return <Loader />;
   }
 
+  type Dev = {
+    profile: Profile,
+    jobs: Job[],
+    projects: Project[],
+    email: string,
+  };
+
+  const {
+    profile,
+    jobs,
+    projects,
+    email,
+  } = dev as Dev;
+
   return (
-    <Layout profile={dev.profile}>
+    <Layout profile={profile}>
       <>
-        <Hero name={dev.profile.name} resumeLink={dev.profile.resume} />
-        <About about={dev.profile.about} profilePic={dev.profile.profilePic} />
-        <Experience jobs={dev.jobs} />
-        <Work projects={dev.projects} />
-        <Contact email={dev.email} />
+        <Hero name={profile.name} resumeLink={profile.resume} />
+        <About about={profile.about} profilePic={profile.profilePic} />
+        <Experience jobs={jobs} />
+        <Work projects={projects} />
+        <Contact email={email} />
       </>
     </Layout>
   );

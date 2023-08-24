@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import decorationExperienceImage from '../assets/images/tea-cup-dynamic-gradient.webp';
 import decorationExperienceImageSmall from '../assets/images/tea-cup-dynamic-gradient-small.webp';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
+import { Job } from '../types/dev';
 
-const Experience = ({ jobs }) => {
+const Experience: React.FC<{ jobs: Job[] }> = ({ jobs }) => {
   const [active, setActive] = useState(0);
   const options = {
     root: null,
@@ -21,11 +21,13 @@ const Experience = ({ jobs }) => {
   return (
     <section className="mx-4 my-10  max-w-screen-lg md:pl-8 md:mx-auto relative" id="experience">
       <h2 className="subtitle">Experience</h2>
+      {/* eslint-disable @typescript-eslint/ban-ts-comment */}
+      {/* @ts-ignore */}
       <div ref={containerRef} className="experience-container flex flex-col md:flex-row justify-start md:items-start items-center mt-4 h-[630px] md:h-[450px]">
         <nav className="w-full md:w-1/3 mt-4 relative">
           <ul className="flex md:flex-col justify-between md:justify-start items-start text-lg">
             {
-              jobs.map((job, i) => (
+              jobs.map((job: Job, i: number) => (
                 <li
                   key={`job_${i + 1}`}
                   className={`${i === active ? 'relative z-10' : ''} md:ml-4`}
@@ -45,7 +47,7 @@ const Experience = ({ jobs }) => {
           <div className="bg-gray-400 opacity-50 w-full md:w-0.5 h-0.5 md:h-full absolute bottom-0 left-0" />
         </nav>
         {
-          jobs.map((job, i) => {
+          jobs.map((job: Job, i: number) => {
             if (i === active) {
               return (
                 <article key={`job_${i + 2}`} className="text-base my-4 md:w-1/2">
@@ -53,7 +55,11 @@ const Experience = ({ jobs }) => {
                   <div className="my-4">{job.description}</div>
                   <div className="my-4">{`Role: ${job.role}`}</div>
                   <ul>
-                    {job.details.list.map((task, index) => <li key={`task_${index + 1}`} className="text-base my-4 ml-8 before:content-['⬡'] before:-ml-8 before:mr-[13px] before:text-xl before:text-dark-orchid">{task}</li>)}
+                    {
+                      job.details && job.details.list?.length
+                        ? job.details.list.map((task, index) => <li key={`task_${index + 1}`} className="text-base my-4 ml-8 before:content-['⬡'] before:-ml-8 before:mr-[13px] before:text-xl before:text-dark-orchid">{task}</li>)
+                        : null
+                      }
                   </ul>
                 </article>
               );
@@ -75,29 +81,6 @@ const Experience = ({ jobs }) => {
       </div>
     </section>
   );
-};
-
-Experience.propTypes = {
-  jobs: PropTypes.arrayOf(PropTypes.shape),
-};
-
-Experience.defaultProps = {
-  jobs: [
-    {
-      name: 'uplift',
-      dateStarted: '2020-07-01',
-      dateEnded: '2021-10-01',
-      description: 'It is a payment method oriented to travel agencies.',
-      role: 'Software Engineer',
-      details: {
-        list: [
-          'Added features with react with context API as a state handler. I used Bootstrap and CSS for the styles.',
-          'Adapting features. In another part of the project, I worked with ClojureScript and Reagent to use React in ClojureScript. This section was stylized with LESS.',
-          'Bug fixing.',
-        ],
-      },
-    },
-  ],
 };
 
 export default Experience;

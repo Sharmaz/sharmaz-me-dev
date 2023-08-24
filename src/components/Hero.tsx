@@ -1,9 +1,13 @@
-import PropTypes from 'prop-types';
 import decorationHeroImage from '../assets/images/cup-dynamic-gradient.webp';
 import decorationHeroImageSmall from '../assets/images/cup-dynamic-gradient-small.webp';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
-const Hero = ({ name, resumeLink }) => {
+type HeroProps = {
+  name: string,
+  resumeLink: string,
+};
+
+const Hero = ({ name, resumeLink }: HeroProps) => {
   const options = {
     root: null,
     rootMargin: '150px',
@@ -13,6 +17,8 @@ const Hero = ({ name, resumeLink }) => {
   const [containerRef, isVisible] = useIntersectionObserver(options);
 
   return (
+    /* eslint-disable @typescript-eslint/ban-ts-comment */
+    // @ts-ignore
     <section ref={containerRef} className="text-2xl text-slate-300 mx-4 mb-10 mt-36 md:text-5xl max-w-screen-lg md:pl-8 md:mx-auto relative">
       <span className="block">Hi,</span>
       <span className="block">{`I’m ${name},`}</span>
@@ -40,11 +46,6 @@ const Hero = ({ name, resumeLink }) => {
       </div>
     </section>
   );
-};
-
-Hero.propTypes = {
-  name: PropTypes.string.isRequired,
-  resumeLink: PropTypes.string.isRequired,
 };
 
 export default Hero;

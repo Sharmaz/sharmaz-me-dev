@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react';
 
-const useFetch = (url, options) => {
-  const [dev, setDev] = useState(null);
+type FetchOptions = {
+  method: string,
+  headers: {
+    'Content-Type': string,
+    api: string
+  },
+};
+const useFetch = (url: string, options: FetchOptions) => {
+  const [dev, setDev] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    // fetch(url, options)
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     seterror(data.error);
-    //     setDev(data);
-    //     setloading(false);
-    //   });
     if (!url) return;
     const fetchData = async () => {
       setLoading(true);
@@ -24,10 +24,12 @@ const useFetch = (url, options) => {
         const json = await response.json();
         setDev(json);
         setLoading(false);
-        setError(null);
+        setError('');
       } catch (err) {
         setLoading(false);
-        setError(err.message);
+        if (err instanceof Error) {
+          setError(err.message);
+        }
       }
     };
 
