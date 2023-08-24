@@ -1,11 +1,11 @@
 import useFetch from './hooks/useFetch';
 import config from '../config';
-import Layout from './layout/Layout';
+import Layout from './layout/Layout.tsx';
 import Hero from './components/Hero.tsx';
 import About from './components/About.tsx';
 import Experience from './components/Experience.tsx';
 import Work from './components/Work.tsx';
-import Contact from './components/Contact';
+import Contact from './components/Contact.tsx';
 import Loader from './components/Loader.tsx';
 
 import './app.css';

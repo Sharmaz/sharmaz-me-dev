@@ -1,9 +1,8 @@
-import PropTypes from 'prop-types';
 import decorationContactImage from '../assets/images/link-dynamic-gradient.webp';
 import decorationContactImageSmall from '../assets/images/link-dynamic-gradient-small.webp';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
-const Contact = ({ email }) => {
+const Contact = ({ email }: { email: string }) => {
   const options = {
     root: null,
     rootMargin: '150px',
@@ -27,7 +26,7 @@ const Contact = ({ email }) => {
               <input className="rounded-2xl p-4 w-full m-0.5 bg-background" type="text" name="subject" placeholder="Subject" />
             </div>
             <div className="form-field flex align-middle my-3 md:my-8">
-              <textarea className="rounded-2xl p-4 w-full m-0.5 bg-background h-72 md:h-auto" name="message" cols="30" rows="5" placeholder="How can I help you?" />
+              <textarea className="rounded-2xl p-4 w-full m-0.5 bg-background h-72 md:h-auto" name="message" cols={30} rows={5} placeholder="How can I help you?" />
             </div>
             <div className="button-orange flex align-middle mt-4 md:mt-8 md:w-[248px]">
               <button className="bg-background rounded-full p-4 w-full m-0.5" type="submit">Send Message</button>
@@ -56,10 +55,6 @@ const Contact = ({ email }) => {
       </div>
     </section>
   );
-};
-
-Contact.propTypes = {
-  email: PropTypes.string.isRequired,
 };
 
 export default Contact;
