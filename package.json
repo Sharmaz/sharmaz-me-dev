@@ -9,7 +9,7 @@
     "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx",
     "test": "jest",
     "coverage": "jest --coverage",
-    "typecheck": "tsc"
+    "typecheck": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
