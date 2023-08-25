@@ -4,7 +4,7 @@ type FetchOptions = {
   method: string,
   headers: {
     'Content-Type': string,
-    api: string
+    api?: string
   },
 };
 const useFetch = (url: string, options: FetchOptions) => {
