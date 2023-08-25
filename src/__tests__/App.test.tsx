@@ -32,9 +32,11 @@ describe('test app compoment', () => {
   });
   test('failing fetch data', () => {
     // eslint-disable-next-line new-cap
-    global.fetch = jest.fn().mockImplementation(() => new Promise.reject(new Error('something bad happened')));
+    global.fetch = jest.fn().mockImplementation((): void => new (Promise.reject as any)(new Error('something bad happened')));
     render(<App />);
     const renderError = screen.getByText(/Error/);
     expect(renderError).toBeInTheDocument();
   });
 });
+
+// 'new' expression, whose target lacks a construct signature, implicitly has an 'any' type.
