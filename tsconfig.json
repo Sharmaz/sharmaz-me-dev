@@ -10,6 +10,13 @@
     "noImplicitAny": false
   },
   "include": [
+    ".eslintrc.js",
+    ".babelrc",
+    "jest.config",
+    "jest.setup.js",
+    "postcss.config.cjs",
+    "tailwind.config.cjs",
+    "webpack.config.js",
     "./src/**/*",
     "./src/types"
   ],

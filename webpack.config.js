@@ -10,7 +10,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
@@ -24,7 +24,7 @@ module.exports = {
     liveReload: true,
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json', '.tsx', '.ts'],
+    extensions: ['.js', '.json', '.tsx', '.ts'],
   },
   module: {
     rules: [
