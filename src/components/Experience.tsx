@@ -14,6 +14,15 @@ const Experience: React.FC<{ jobs: Job[] }> = ({ jobs }) => {
     return <div>Experience Empty</div>;
   }
 
+  const sortedJobs = jobs.sort((job1, job2) => {
+    if (job1.dateStarted < job2.dateStarted) {
+      return 1;
+    } if (job1.dateStarted > job2.dateStarted) {
+      return -1;
+    }
+    return 0;
+  });
+
   return (
     <section className="mx-4 my-10  max-w-screen-lg md:pl-8 md:mx-auto relative" id="experience">
       <h2 className="subtitle">Experience</h2>
@@ -21,7 +30,7 @@ const Experience: React.FC<{ jobs: Job[] }> = ({ jobs }) => {
         <nav className="w-full md:w-1/3 mt-4 relative">
           <ul className="flex md:flex-col justify-between md:justify-start items-start text-lg">
             {
-              jobs.map((job: Job, i: number) => (
+              sortedJobs.map((job: Job, i: number) => (
                 <li
                   key={`job_${i + 1}`}
                   className={`${i === active ? 'relative z-10' : ''} md:ml-4`}
@@ -41,7 +50,7 @@ const Experience: React.FC<{ jobs: Job[] }> = ({ jobs }) => {
           <div className="bg-gray-400 opacity-50 w-full md:w-0.5 h-0.5 md:h-full absolute bottom-0 left-0" />
         </nav>
         {
-          jobs.map((job: Job, i: number) => {
+          sortedJobs.map((job: Job, i: number) => {
             if (i === active) {
               return (
                 <article key={`job_${i + 2}`} className="text-base my-4 md:w-1/2">
