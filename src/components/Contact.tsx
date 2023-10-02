@@ -1,21 +1,17 @@
+import { useRef } from 'react';
 import decorationContactImage from '../assets/images/link-dynamic-gradient.webp';
 import decorationContactImageSmall from '../assets/images/link-dynamic-gradient-small.webp';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
 
 const Contact = ({ email }: { email: string }) => {
-  const options = {
-    root: null,
-    rootMargin: '150px',
-    threshold: 1.0,
-  };
+  const ref = useRef<HTMLDivElement | null>(null);
+  const entry = useIntersectionObserver(ref, {});
+  const isVisible = !!entry?.isIntersecting;
 
-  const [containerRef, isVisible] = useIntersectionObserver(options);
   return (
     <section className="mx-4 my-10  max-w-screen-lg md:px-8 md:mx-auto relative" id="contact">
       <h2 className="subtitle">Contact me</h2>
-      {/* eslint-disable @typescript-eslint/ban-ts-comment */}
-      {/* @ts-ignore */}
-      <div className="flex flex-col md:flex-row" ref={containerRef}>
+      <div className="flex flex-col md:flex-row" ref={ref}>
         <div className="form-container p-0.5 w-full my-8 md:w-1/2">
           <form className="bg-background rounded-2xl p-4" action="https://formspree.io/f/irae45@gmail.com" method="post">
             <div className="form-field flex align-middle my-3 md:my-4 w-full">

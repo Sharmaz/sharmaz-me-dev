@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import decorationExperienceImage from '../assets/images/tea-cup-dynamic-gradient.webp';
 import decorationExperienceImageSmall from '../assets/images/tea-cup-dynamic-gradient-small.webp';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
@@ -6,13 +6,9 @@ import { Job } from '../types/dev';
 
 const Experience: React.FC<{ jobs: Job[] }> = ({ jobs }) => {
   const [active, setActive] = useState(0);
-  const options = {
-    root: null,
-    rootMargin: '150px',
-    threshold: 1.0,
-  };
-
-  const [containerRef, isVisible] = useIntersectionObserver(options);
+  const ref = useRef<HTMLDivElement | null>(null);
+  const entry = useIntersectionObserver(ref, {});
+  const isVisible = !!entry?.isIntersecting;
 
   if (!jobs.length) {
     return <div>Experience Empty</div>;
@@ -21,9 +17,7 @@ const Experience: React.FC<{ jobs: Job[] }> = ({ jobs }) => {
   return (
     <section className="mx-4 my-10  max-w-screen-lg md:pl-8 md:mx-auto relative" id="experience">
       <h2 className="subtitle">Experience</h2>
-      {/* eslint-disable @typescript-eslint/ban-ts-comment */}
-      {/* @ts-ignore */}
-      <div ref={containerRef} className="experience-container flex flex-col md:flex-row justify-start md:items-start items-center mt-4 h-[630px] md:h-[450px]">
+      <div ref={ref} className="experience-container flex flex-col md:flex-row justify-start md:items-start items-center mt-4 h-[630px] md:h-[450px]">
         <nav className="w-full md:w-1/3 mt-4 relative">
           <ul className="flex md:flex-col justify-between md:justify-start items-start text-lg">
             {
