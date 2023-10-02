@@ -1,40 +1,35 @@
-import { useRef, useEffect, useState } from 'react';
+import { RefObject, useEffect, useState } from 'react';
 
-type ObserverOptions = {
-  root: HTMLElement | null,
-  rootMargin: string,
-  threshold: number,
-};
+interface Args extends IntersectionObserverInit {
+  freezeOnceVisible?: boolean
+}
 
-type ObserverEntry = {
-  boundingClientRect: DOMRectReadOnly,
-  intersectionRatio: number,
-  intersectionRect: DOMRectReadOnly,
-  isIntersecting: boolean,
-  rootBounds: DOMRectReadOnly | null,
-  target: Element,
-  time: number,
-};
-
-const useIntersectionObserver = ((options: ObserverOptions) => {
-  const containerRef = useRef<HTMLDivElement | HTMLElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  const callbackFunction = (entries: ObserverEntry[]) => {
-    const [entry] = entries;
-    setIsVisible(entry.isIntersecting);
+export default function useIntersectionObserver(
+  elementRef: RefObject<Element>,
+  {
+    threshold = 1.0,
+    root = null,
+    rootMargin = '150px',
+    freezeOnceVisible = false,
+  }: Args,
+): IntersectionObserverEntry | undefined {
+  const [entry, setEntry] = useState<IntersectionObserverEntry>();
+  const frozen = entry?.isIntersecting && freezeOnceVisible;
+  const updateEntry = ([updatedEntry]: IntersectionObserverEntry[]): void => {
+    setEntry(updatedEntry);
   };
 
   useEffect(() => {
-    const observer = new IntersectionObserver(callbackFunction, options);
-    if (containerRef.current) observer.observe(containerRef.current);
+    const node = elementRef?.current;
+    const hasIOSupport = !!window.IntersectionObserver;
 
-    return () => {
-      if (containerRef.current) observer.unobserve(containerRef.current);
-    };
-  }, [containerRef, options]);
+    if (!hasIOSupport || frozen || !node) return;
 
-  return [containerRef, isVisible];
-});
+    const observerParams = { threshold, root, rootMargin };
+    const observer = new IntersectionObserver(updateEntry, observerParams);
 
-export default useIntersectionObserver;
+    observer.observe(node);
+  }, [elementRef?.current, JSON.stringify(threshold), root, rootMargin, frozen]);
+
+  return entry;
+}

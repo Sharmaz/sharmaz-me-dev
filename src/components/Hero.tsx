@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+
 import decorationHeroImage from '../assets/images/cup-dynamic-gradient.webp';
 import decorationHeroImageSmall from '../assets/images/cup-dynamic-gradient-small.webp';
 import useIntersectionObserver from '../hooks/useIntersectionObserver';
@@ -8,18 +10,12 @@ type HeroProps = {
 };
 
 const Hero = ({ name, resumeLink }: HeroProps) => {
-  const options = {
-    root: null,
-    rootMargin: '150px',
-    threshold: 1.0,
-  };
-
-  const [containerRef, isVisible] = useIntersectionObserver(options);
+  const ref = useRef<HTMLDivElement | null>(null);
+  const entry = useIntersectionObserver(ref, {});
+  const isVisible = !!entry?.isIntersecting;
 
   return (
-    /* eslint-disable @typescript-eslint/ban-ts-comment */
-    // @ts-ignore
-    <section ref={containerRef} className="text-2xl text-slate-300 mx-4 mb-10 mt-36 md:text-5xl max-w-screen-lg md:pl-8 md:mx-auto relative">
+    <section ref={ref} className="text-2xl text-slate-300 mx-4 mb-10 mt-36 md:text-5xl max-w-screen-lg md:pl-8 md:mx-auto relative">
       <span className="block">Hi,</span>
       <span className="block">{`I’m ${name},`}</span>
       <span className="block">a Frontend Developer</span>
