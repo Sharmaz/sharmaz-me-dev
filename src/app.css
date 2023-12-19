@@ -24,7 +24,11 @@
   }
 
   .orange-gradient {
-    @apply bg-gradient-to-tl from-orange-peel via-vivid-cerise to-light-cobalt;
+    @apply bg-gradient-to-tl from-dark-orchid via-heliotrope to-orange-peel;
+  }
+
+  .red-gradient {
+    @apply bg-gradient-to-tl from-orange-peel via-vivid-cerise to-heliotrope;
   }
 
   .button-purple {
@@ -66,6 +70,24 @@
 
   .subtitle {
     @apply text-2xl md:text-4xl pt-16 drop-shadow-3xl text-slate-300;
+  }
+
+  .hero-style {
+    @apply before:absolute before:inset-0 before:p-[2px_0]
+    before:bg-clip-text before:text-fill-color-transparent
+    before:animate-text-gradient
+  }
+  .text-fill-color-transparent {
+    -webkit-text-fill-color: transparent;
+  }
+  .animation-delay-0 {
+    animation-delay: 0s;
+  }
+  .animation-delay-3 {
+    animation-delay: 3s;
+  }
+  .animation-delay-6 {
+    animation-delay: 6s;
   }
 }
 
