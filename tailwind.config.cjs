@@ -14,6 +14,7 @@ module.exports = {
       },
       dropShadow: {
         '3xl': '0.15rem 0rem 0 #8233C5',
+        '2xl': '3px 2px 0 #8233C5',
       },
       animation: {
         'purple-animation': 'animationGradient 2s ease alternate infinite',

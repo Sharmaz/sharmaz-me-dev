@@ -31,6 +31,7 @@ export type Project = {
   description: string,
   githubLink: string,
   demoLink: string,
+  imageLink: string,
   tags?: {
     list?: string[],
   },
