@@ -18,6 +18,7 @@ const Work: React.FC<{ projects: Project[] }> = ({ projects }) => (
                   desc={project.description}
                   githubLink={project.githubLink}
                   demoLink={project.demoLink}
+                  imageLink={project.imageLink}
                   tags={project.tags?.list ? project.tags.list : []}
                 />
               ))
